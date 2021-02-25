@@ -1,45 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const student1 = {
-    name: 'Sarmin',
-    roll: 1,
-    color: 'Shemla'
-  }
-  const student2 = {
-    name: 'Bithy',
-    roll: 5,
-    color: 'Uzzol Shemla'
-  }
-  const style = {
-    color: 'red',
-    backgroundColor: 'yellow',
-    width: '200px', 
-    textAlign: 'center'
-  }
+  const player = ['Mojnu', 'Ibrahim', 'Ariful'];
+  const profession = ['Web Developer', 'High School Teacher', 'Manager']
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit Done <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>I am a react person</p>
+        <Person name={player[0]} profession={profession[0]}></Person>
+        <Person name={player[1]} profession={profession[1]}></Person>
+        <Person name={player[2]} profession={profession[2]}></Person>
       </header>
-      <h1>My Heading</h1>
-      <p>My first react app</p>
-      <p style={{color: 'red', backgroundColor: 'black', width: '200px', textAlign: 'center'}}>Student1: {student1.name + ' ' + student1.roll}</p>
-      <h2 style={style}>Student2: {student2.name + ' ' + student2.color}</h2>
     </div>
   );
 }
-
+function Person(props) {
+  const stylePerson = {
+    border: '1px solid yellow',
+    margin: '10px',
+    boxShadow: '5px 5px lightblue'
+  }
+  return (
+    <div style = {stylePerson}>
+      <h2>My Name: {props.name}</h2>
+      <h2>My Profession: {props.profession}</h2>
+    </div>
+  )
+}
 export default App;
