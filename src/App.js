@@ -1,18 +1,31 @@
 import './App.css';
 
 function App() {
+  const nayok = ['Arefin Shuvo', 'Bapparaz', 'Manna', 'Dipjol', 'Mojnu']
   const player = ['Mojnu', 'Ibrahim', 'Ariful'];
   const products = [
     {productsName: 'Photoshop', mrp: '$52'},
-    {productsName: 'Illustrator', mrp: '$20'}
+    {productsName: 'Illustrator', mrp: '$20'},
+    {productsName: 'MS Word', mrp: '$10'}
   ];
   const profession = ['Web Developer', 'High School Teacher', 'Manager']
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a react person</p>
-        <Product product = {products[0]}></Product>
-        <Product product = {products[1]}></Product>
+        <ul>
+          {
+            nayok.map(newNayok => <li>{newNayok}</li>)
+          }
+          {
+            products.map(newProduct => <li>{newProduct.productsName}</li>)
+          }
+        </ul>
+        {
+          products.map(addProduct => <Product product = {addProduct}></Product>)
+        }
+        {/* <Product product = {products[0]}></Product>
+        <Product product = {products[1]}></Product> */}
         <Person name={player[0]} profession={profession[0]}></Person>
         <Person name={player[1]} profession={profession[1]}></Person>
         <Person name={player[2]} profession={profession[2]}></Person>
