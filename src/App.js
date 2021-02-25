@@ -46,11 +46,11 @@ function Product(props){
     margin: '10px',
     float: 'left'
   }
-  console.log(props);
+  const {productsName, mrp} = props.product;
   return (
     <div style={styleProduct}>
-        <h2>{props.product.productsName}</h2>
-        <h1>{props.product.mrp}</h1>
+        <h2>{productsName}</h2>
+        <h1>{mrp}</h1>
         <button>Buy Now</button>
     </div>
   )
